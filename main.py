@@ -188,15 +188,13 @@ def main(message):
 𝗖𝗛:@ALRAGI1
 ±++++++++++++++++++++++++++++
 ''')
-                else:
-                    bad += 1
-                    print(Fore.YELLOW + cc + "->" + Fore.RED + last)
-
-        if sto["stop"] == False:
-            bot.reply_to(message, 'تم فحص الكومبو بأكمله.')
-    else:
-        bot.reply_to(message, 'هذا البوت مخصص للاشتراكات المدفوعة. اتصل بنا على @YYNXX')
-
+else:
+                   bad +=1
+                   print(Fore.YELLOW+cc+"->"+Fore.RED+last)
+       if sto["stop"] == False:
+           bot.reply_to(message,'تم فحص الكومبو كامل')
+ else:
+     bot.reply_to(message,'THE BOT IS PREMIUM CALL ME \n @IGFIG')
 keep_alive()
-print("بدأت البوت @YYNXX")
+print("STARTED BOT @YYNXX ")
 bot.infinity_polling()
