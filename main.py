@@ -101,6 +101,7 @@ def main(message):
                     bot.edit_message_text(chat_id=message.chat.id, message_id=ko.message_id,
                                           text=f'''مرحبًا {name}، يرجى الانتظار لإتمام عملية الفحص وإرسال الهيتز إذا واجهتك خطأ.
     ''', parse_mode='markdown', reply_markup=mes)
+                    last = "" 
                     try:
                         last = str(Tele(cc))
                     except Exception as e:
