@@ -8,6 +8,7 @@ from hh import keep_alive
 
 sto = {"stop": False}
 token = "5838317723:AAHaQhqUNIu3-crweFdHqhFBPxVaiBxfGRc"
+id = 926877758
 bot = telebot.TeleBot(token, parse_mode="HTML")
 
 @bot.message_handler(commands=["stop"])
@@ -17,7 +18,7 @@ def stop(message):
 
 @bot.message_handler(commands=["start"])
 def start(message):
-    bot.send_message(message.chat.id, "مرحبًا بك في البوت.\nللفحص، قم بإرسال الكومبو. "
+    bot.send_message(message.chat.id, "مرحبًا بك في البوت.\nيعمل هذا البوت معك فقط.\nللفحص، قم بإرسال الكومبو. "
                                       "إذا واجهتك مشكلة في الفحص، يرجى تنظيف الكومبو الخاص بك.",
                      reply_markup=telebot.types.InlineKeyboardMarkup())
 
@@ -39,83 +40,84 @@ def main(message):
 
     sto.update({"stop": False})
 
-    with open("combo.txt") as file:
-        lino = file.readlines()
-        lino = [line.rstrip() for line in lino]
-        total = len(lino)
-        for cc in lino:
-            if sto["stop"] == False:
-                bin = cc[:6]
-                url = f"https://lookup.binlist.net/{bin}"
+    if message.chat.id == id:
+        with open("combo.txt") as file:
+            lino = file.readlines()
+            lino = [line.rstrip() for line in lino]
+            total = len(lino)
+            for cc in lino:
+                if sto["stop"] == False:
+                    bin = cc[:6]
+                    url = f"https://lookup.binlist.net/{bin}"
 
-                try:
-                    req = requests.get(url).json()
-                except:
-                    pass
+                    try:
+                        req = requests.get(url).json()
+                    except:
+                        pass
 
-                try:
-                    inf = req['scheme']
-                except:
-                    inf = "------------"
+                    try:
+                        inf = req['scheme']
+                    except:
+                        inf = "------------"
 
-                try:
-                    type = req['type']
-                except:
-                    type = "-----------"
+                    try:
+                        type = req['type']
+                    except:
+                        type = "-----------"
 
-                try:
-                    brand = req['brand']
-                except:
-                    brand = '-----'
+                    try:
+                        brand = req['brand']
+                    except:
+                        brand = '-----'
 
-                try:
-                    info = inf + '-' + type + '-' + brand
-                except:
-                    info = "-------"
+                    try:
+                        info = inf + '-' + type + '-' + brand
+                    except:
+                        info = "-------"
 
-                try:
-                    ii = info.upper()
-                except:
-                    ii = "----------"
+                    try:
+                        ii = info.upper()
+                    except:
+                        ii = "----------"
 
-                try:
-                    bank = req['bank']['name'].upper()
-                except:
-                    bank = "--------"
+                    try:
+                        bank = req['bank']['name'].upper()
+                    except:
+                        bank = "--------"
 
-                try:
-                    do = req['country']['name'] + ' ' + req['country']['emoji'].upper()
-                except:
-                    do = "-----------"
+                    try:
+                        do = req['country']['name'] + ' ' + req['country']['emoji'].upper()
+                    except:
+                        do = "-----------"
 
-                mes = types.InlineKeyboardMarkup(row_width=1)
-                GALD1 = types.InlineKeyboardButton(f"• {cc} •", callback_data='u8')
-                GALD3 = types.InlineKeyboardButton(f"• 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅ : [ {ok} ] •", callback_data='u2')
-                GALD4 = types.InlineKeyboardButton(f"• 𝗗𝗲𝗰𝗹𝗶𝗻𝗲𝗱 ❌  : [ {bad} ] •", callback_data='u1')
-                risk6 = types.InlineKeyboardButton(f"• 𝗥𝗜𝗦𝗞 🥲  : [ {risk} ] •", callback_data='u1')
-                GALD5 = types.InlineKeyboardButton(f"• 𝗧𝗢𝗧𝗔𝗟 🔥  : [ {total} ] •", callback_data='u1')
-                mes.add(GALD1, GALD3, GALD4, risk6, GALD5)
+                    mes = types.InlineKeyboardMarkup(row_width=1)
+                    GALD1 = types.InlineKeyboardButton(f"• {cc} •", callback_data='u8')
+                    GALD3 = types.InlineKeyboardButton(f"• 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅ : [ {ok} ] •", callback_data='u2')
+                    GALD4 = types.InlineKeyboardButton(f"• 𝗗𝗲𝗰𝗹𝗶𝗻𝗲𝗱 ❌  : [ {bad} ] •", callback_data='u1')
+                    risk6 = types.InlineKeyboardButton(f"• 𝗥𝗜𝗦𝗞 🥲  : [ {risk} ] •", callback_data='u1')
+                    GALD5 = types.InlineKeyboardButton(f"• 𝗧𝗢𝗧𝗔𝗟 🔥  : [ {total} ] •", callback_data='u1')
+                    mes.add(GALD1, GALD3, GALD4, risk6, GALD5)
 
-                bot.edit_message_text(chat_id=message.chat.id, message_id=ko.message_id,
-                                      text=f'''مرحبًا {name}، يرجى الانتظار لإتمام عملية الفحص وإرسال الهيتز إذا واجهتك خطأ.
-''', parse_mode='markdown', reply_markup=mes)
+                    bot.edit_message_text(chat_id=message.chat.id, message_id=ko.message_id,
+                                          text=f'''مرحبًا {name}، يرجى الانتظار لإتمام عملية الفحص وإرسال الهيتز إذا واجهتك خطأ.
+    ''', parse_mode='markdown', reply_markup=mes)
 
-                last = ""
-                try:
-                    last = str(Tele(cc))
-                except Exception as e:
-                    print(e)
+                    last = ""
                     try:
                         last = str(Tele(cc))
                     except Exception as e:
                         print(e)
+                        try:
+                            last = str(Tele(cc))
+                        except Exception as e:
+                            print(e)
 
-                if "risk" in last:
-                    risk += 1
-                    print(Fore.YELLOW + cc + "->" + Fore.CYAN + last)
-                elif "Insufficient Funds" in last:
-                    ok += 1
-                    respo = f'''
+                    if "risk" in last:
+                        risk += 1
+                        print(Fore.YELLOW + cc + "->" + Fore.CYAN + last)
+                    elif "Insufficient Funds" in last:
+                        ok += 1
+                        respo = f'''
 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
 
 𝗖𝗖 ⇾ {cc}
@@ -131,10 +133,10 @@ def main(message):
 ±++++++++++++++++++++++++++++
 إذا تم تغيير حقوق البوت سنفصل عنك ولن نقوم بإرجاع أموالك.
 '''
-                    print(Fore.YELLOW + cc + "->" + Fore.GREEN + last)
-                    bot.reply_to(message, respo)
-                    with open("hit.txt", "a") as f:
-                        f.write(f'''
+                        print(Fore.YELLOW + cc + "->" + Fore.GREEN + last)
+                        bot.reply_to(message, respo)
+                        with open("hit.txt", "a") as f:
+                            f.write(f'''
 ±++++++++++++++++++++++++++++
 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
 
@@ -152,9 +154,9 @@ def main(message):
 إذا تم تغيير حقوق البوت سنفصل عنك ولن نقوم بإرجاع أموالك.
 ±++++++++++++++++++++++++++++
 ''')
-                elif "Status code avs: Gateway Rejected: avs" in last or "Nice! New payment method added:" in last or "Status code 81724: Duplicate card exists in the vault." in last:
-                    ok += 1
-                    respo = (f'''
+                    elif "Status code avs: Gateway Rejected: avs" in last or "Nice! New payment method added:" in last or "Status code 81724: Duplicate card exists in the vault." in last:
+                        ok += 1
+                        respo = (f'''
 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
 
 𝗖𝗖 ⇾ {cc}
@@ -169,10 +171,10 @@ def main(message):
 ±++++++++++++++++++++++++++++
 إذا تم تغيير حقوق البوت سنفصل عنك ولن نقوم بإرجاع أموالك.
 ''')
-                    print(Fore.YELLOW + cc + "->" + Fore.GREEN + last)
-                    bot.reply_to(message, respo)
-                    with open("hit.txt", "a") as f:
-                        f.write(f'''
+                        print(Fore.YELLOW + cc + "->" + Fore.GREEN + last)
+                        bot.reply_to(message, respo)
+                        with open("hit.txt", "a") as f:
+                            f.write(f'''
 ±++++++++++++++++++++++++++++
 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
 
@@ -188,13 +190,15 @@ def main(message):
 𝗖𝗛:@ALRAGI1
 ±++++++++++++++++++++++++++++
 ''')
-else:
-                   bad +=1
-                   print(Fore.YELLOW+cc+"->"+Fore.RED+last)
-       if sto["stop"] == False:
-           bot.reply_to(message,'تم فحص الكومبو كامل')
- else:
-     bot.reply_to(message,'THE BOT IS PREMIUM CALL ME \n @IGFIG')
+                    else:
+                        bad += 1
+                        print(Fore.YELLOW + cc + "->" + Fore.RED + last)
+
+            if sto["stop"] == False:
+                bot.reply_to(message, 'تم فحص الكومبو بأكمله.')
+    else:
+        bot.reply_to(message, 'هذا البوت مخصص للاشتراكات المدفوعة. اتصل بنا على @YYNXX')
+
 keep_alive()
-print("STARTED BOT @YYNXX ")
+print("بدأت البوت @YYNXX")
 bot.infinity_polling()
