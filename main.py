@@ -2,6 +2,7 @@ import requests
 import os
 import telebot
 from telebot import types
+from telebot import *
 from GATEAU import Tele
 from colorama import Fore
 from hh import keep_alive
