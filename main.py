@@ -4,7 +4,7 @@ import telebot
 from telebot import types
 from GATEAU import Tele
 from colorama import Fore
-
+from hh import keep_aliva
 sto = {"stop": False}
 token = "5838317723:AAHaQhqUNIu3-crweFdHqhFBPxVaiBxfGRc"
 id = 926877758
