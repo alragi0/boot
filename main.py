@@ -40,7 +40,7 @@ def main(message):
 
     sto.update({"stop": False})
 
-    if message.chat.id == id:
+    
         with open("combo.txt") as file:
             lino = file.readlines()
             lino = [line.rstrip() for line in lino]
