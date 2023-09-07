@@ -5,6 +5,7 @@ try:
 except:
     import os
     os.system("pip install pyTelegramBotAPI")
+    os.system("pip install requests")
 from telebot import *
 from GATEAU import Tele
 from colorama import Fore
