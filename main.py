@@ -2,6 +2,7 @@ import requests
 import os
 import telebot
 from telebot import types
+from telebot import *
 from GATEAU import Tele
 from colorama import Fore
 from hh import keep_alive
@@ -31,6 +32,7 @@ def main(message):
     name = f"{first_name} {last_name}"
     risk = 0
     bad = 0
+    nok = 0
     ok = 0
     ko = bot.reply_to(message, f"#－ مرحبًا {name} سأبدأ الآن عملية الفحص.")
 
