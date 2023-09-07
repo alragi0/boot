@@ -101,19 +101,21 @@ def main(message):
                     bot.edit_message_text(chat_id=message.chat.id, message_id=ko.message_id,
                                           text=f'''مرحبًا {name}، يرجى الانتظار لإتمام عملية الفحص وإرسال الهيتز إذا واجهتك خطأ.
     ''', parse_mode='markdown', reply_markup=mes)
-    last = ""
-try:
-    last = str(Tele(cc))
-except Exception as e:
-    print(e)
-    try:
-        last = str(Tele(cc))
-    except Exception as e:
-        print(e)
-        if "risk" in last:
-         risk += 1
-        print(Fore.YELLOW + cc + "->" + Fore.CYAN + last)
-             elif "Insufficient Funds" in last:
+
+                    last = ""
+                    try:
+                        last = str(Tele(cc))
+                    except Exception as e:
+                        print(e)
+                        try:
+                            last = str(Tele(cc))
+                        except Exception as e:
+                            print(e)
+
+                    if "risk" in last:
+                        risk += 1
+                        print(Fore.YELLOW + cc + "->" + Fore.CYAN + last)
+                    elif "Insufficient Funds" in last:
                         ok += 1
                         respo = f'''
 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
