@@ -185,7 +185,7 @@ def main(message):
        if sto["stop"] == False:
            bot.reply_to(message,'تم فحص الكومبو كامل')
  else:
-     bot.reply_to(message,'THE BOT IS PREMIUM CALL ME \n @IGFIG')
+     bot.reply_to(message,'THE BOT IS PREMIUM CALL ME \n @YYNXX')
 keep_alive()
 print("STARTED BOT @YYNXX ")
 bot.infinity_polling()
