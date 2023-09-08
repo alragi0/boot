@@ -32,7 +32,7 @@ def main(message):
     bad = 0
     ok = 0
     nok = 0
-    ko = bot.reply_to(message, f"#－ مرحبًا {name} سأبدأ الآن عملية الفحص.")
+    ko = bot.reply_to(message, f"#－ مرحبًا {name} سأبدأ الآن عملية الفحص يرجى الانتظار.")
 
     ee = bot.download_file(bot.get_file(message.document.file_id).file_path)
 
