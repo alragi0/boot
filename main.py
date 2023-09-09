@@ -10,6 +10,7 @@ from hh import keep_alive
 sto = {"stop": False}
 token = "5838317723:AAHaQhqUNIu3-crweFdHqhFBPxVaiBxfGRc"
 id = 926877758
+channel_username = "@HHHH9N"
 bot = telebot.TeleBot(token, parse_mode="HTML")
 
 @bot.message_handler(commands=["stop"])
@@ -100,7 +101,7 @@ def main(message):
                     mes.add(GALD1, GALD3, GALD4, risk6, GALD5)
 
                     bot.edit_message_text(chat_id=message.chat.id, message_id=ko.message_id,
-                                          text=f'''مرحبًا {name}، يرجى الانتظار لإتمام عملية الفحص وإرسال الهيتز إذا واجهتك خطأ.
+                                          text=f'''مرحبًا {name}، يرجى الانتظار لإتمام عملية الفحص وإرسال الهيتز إذا واجهتك خطأ تواصل مع المطور.
     ''', parse_mode='markdown', reply_markup=mes)
 
                     last = ""
@@ -136,6 +137,7 @@ def main(message):
 '''
                         print(Fore.YELLOW + cc + "->" + Fore.GREEN + last)
                         bot.reply_to(message, respo)
+                        bot.send_message(channel_username, respo)
                         with open("hit.txt", "a") as f:
                             f.write(f'''
 ±++++++++++++++++++++++++++++
@@ -174,6 +176,7 @@ def main(message):
 ''')
                         print(Fore.YELLOW + cc + "->" + Fore.GREEN + last)
                         bot.reply_to(message, respo)
+                        bot.send_message(channel_username, respo)
                         with open("hit.txt", "a") as f:
                             f.write(f'''
 ±++++++++++++++++++++++++++++
