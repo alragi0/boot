@@ -8,9 +8,9 @@ from colorama import Fore
 from hh import keep_alive
 
 sto = {"stop": False}
-token = "5838317723:AAHaQhqUNIu3-crweFdHqhFBPxVaiBxfGRc"
-id = 926877758
-channel_username = "@HHHH9N"
+token = "6476983960:AAHipEEkl8HsP5IwRr7aa2ajN0WOtiRxHfE"
+id = 5743774416
+channel_username = "@v_8_d"
 bot = telebot.TeleBot(token, parse_mode="HTML")
 
 @bot.message_handler(commands=["stop"])
